@@ -1,0 +1,13 @@
+{% extends 'inventory/base.html' %}
+
+{% block content %}
+<h2>Sale Order List</h2>
+<a href="{% url 'sale_order_create' %}">Create New Sale Order</a>
+<ul>
+    {% for sale_order in sale_orders %}
+        <li>
+            <a href="{% url 'sale_order_detail' sale_order.pk %}">{{ sale_order.product.name }} - {{ sale_order.status }}</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

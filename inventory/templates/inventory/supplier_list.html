@@ -1,0 +1,13 @@
+{% extends 'inventory/base.html' %}
+
+{% block content %}
+<h2>Supplier List</h2>
+<a href="{% url 'supplier_create' %}">Add New Supplier</a>
+<ul>
+    {% for supplier in suppliers %}
+        <li>
+            <a href="{% url 'supplier_detail' supplier.pk %}">{{ supplier.name }}</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

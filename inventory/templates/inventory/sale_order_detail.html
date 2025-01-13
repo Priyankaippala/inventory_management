@@ -1,0 +1,10 @@
+{% extends 'inventory/base.html' %}
+
+{% block content %}
+<h2>Sale Order Details</h2>
+<p>Product: {{ sale_order.product.name }}</p>
+<p>Quantity: {{ sale_order.quantity }}</p>
+<p>Total Price: {{ sale_order.total_price }}</p>
+<p>Sale Date: {{ sale_order.sale_date }}</p>
+<p>Status: {{ sale_order.status }}</p>
+{% endblock %}

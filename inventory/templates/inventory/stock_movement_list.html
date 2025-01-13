@@ -1,0 +1,11 @@
+{% extends 'inventory/base.html' %}
+
+{% block content %}
+<h2>Stock Movement List</h2>
+<a href="{% url 'stock_movement_create' %}">Create New Stock Movement</a>
+<ul>
+    {% for movement in stock_movements %}
+        <li>{{ movement.product.name }} - {{ movement.movement_type }} - {{ movement.movement_date }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
